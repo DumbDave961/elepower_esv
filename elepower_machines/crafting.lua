@@ -230,6 +230,7 @@ local compressor_recipes = {
 		output = epi.mese_crystal,
 		time   = 2,
 	},
+	{
 		recipe = { epi.mese_crystal_fragment.." 5", epi.mese_crystal_fragment.." 4" },
 		output = epi.mese_crystal,
 		time   = 2,
@@ -239,6 +240,7 @@ local compressor_recipes = {
 		output = epi.mese,
 		time   = 2,
 	},
+	{
 		recipe = { epi.mese_crystal.." 5",epi.mese_crystal.." 4" },
 		output = epi.mese,
 		time   = 2,
