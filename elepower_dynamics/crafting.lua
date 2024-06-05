@@ -1,4 +1,3 @@
-
 -- see elepower_papi >> external_nodes_items.lua for explanation
 -- shorten table ref
 local epi = ele.external.ing 
@@ -8,7 +7,7 @@ local ept = ele.external.tools
 -- Overrides --
 ---------------
 
--- Remove iron_lump -> steel_ingot, because dynamics adds iron ingot
+--Remove iron_lump -> steel_ingot, because dynamics adds iron ingot
 minetest.clear_craft({type = "cooking", output = epi.steel_ingot})
 
 -----------
@@ -29,7 +28,7 @@ if ept.enable_iron_lead_tools == true then
 	minetest.register_craft({
 		output = 'elepower_dynamics:pick_lead',
 		recipe = {
-			{'elepower_dynamics:lead_ingot', 'elepower_dynamics:lead_ingot', 'elepower_dynamics:lead_ingot'},
+			{epi.lead_ingot, epi.lead_ingot, epi.lead_ingot},
 			{'',epi.group_stick, ''},
 			{'',epi.group_stick, ''},
 		}
@@ -49,7 +48,7 @@ if ept.enable_iron_lead_tools == true then
 	minetest.register_craft({
 		output = 'elepower_dynamics:shovel_lead',
 		recipe = {
-			{'elepower_dynamics:lead_ingot'},
+			{epi.lead_ingot},
 			{epi.group_stick},
 			{epi.group_stick},
 		}
@@ -69,8 +68,8 @@ if ept.enable_iron_lead_tools == true then
 	minetest.register_craft({
 		output = 'elepower_dynamics:axe_lead',
 		recipe = {
-			{'elepower_dynamics:lead_ingot', 'elepower_dynamics:lead_ingot'},
-			{'elepower_dynamics:lead_ingot',epi.group_stick},
+			{epi.lead_ingot, epi.lead_ingot},
+			{epi.lead_ingot,epi.group_stick},
 			{'',epi.group_stick},
 		}
 	})
@@ -89,8 +88,8 @@ if ept.enable_iron_lead_tools == true then
 	minetest.register_craft({
 		output = 'elepower_dynamics:sword_lead',
 		recipe = {
-			{'elepower_dynamics:lead_ingot'},
-			{'elepower_dynamics:lead_ingot'},
+			{epi.lead_ingot},
+			{epi.lead_ingot},
 			{epi.group_stick},
 		}
 	})
@@ -124,9 +123,9 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "elepower_dynamics:conduit 8",
 	recipe = {
-		{"elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot"},
+		{epi.lead_ingot, epi.lead_ingot, epi.lead_ingot},
 		{"basic_materials:copper_wire", "basic_materials:copper_wire", "basic_materials:copper_wire"},
-		{"elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot"},
+		{epi.lead_ingot, epi.lead_ingot, epi.lead_ingot},
 	},
 	replacements = {
 		{"basic_materials:copper_wire", "basic_materials:empty_spool"},
@@ -194,9 +193,9 @@ end
 minetest.register_craft({
 	output = "elepower_dynamics:opaque_duct 3",
 	recipe = {
-		{"elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot"},
-		{"fluid_transfer:fluid_duct"   , "fluid_transfer:fluid_duct"    , "fluid_transfer:fluid_duct"},
-		{"elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot"},
+		{epi.lead_ingot, epi.lead_ingot, epi.lead_ingot},
+		{"fluid_transfer:fluid_duct", "fluid_transfer:fluid_duct", "fluid_transfer:fluid_duct"},
+		{epi.lead_ingot, epi.lead_ingot, epi.lead_ingot},
 	}
 })
 
@@ -242,7 +241,7 @@ minetest.register_craft({
 	output = "elepower_dynamics:wound_silver_coil",
 	recipe = {
 		{""              , epi.silver_ingot, ""},
-		{epi.silver_ingot, "elepower_dynamics:zinc_ingot",epi.silver_ingot},
+		{epi.silver_ingot, epi.zinc_ingot, epi.silver_ingot},
 		{""              , epi.silver_ingot, ""}
 	}
 })
@@ -251,7 +250,7 @@ minetest.register_craft({
 	output = "elepower_dynamics:wound_silver_coil",
 	recipe = {
 		{"", "basic_materials:silver_wire", ""},
-		{"basic_materials:silver_wire", "elepower_dynamics:zinc_ingot", "basic_materials:silver_wire"},
+		{"basic_materials:silver_wire", epi.zinc_ingot, "basic_materials:silver_wire"},
 		{"", "basic_materials:silver_wire", ""}
 	},
 	replacements = {
@@ -417,7 +416,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type   = "cooking",
-	output = "elepower_dynamics:lead_ingot",
+	output = epi.lead_ingot,
 	recipe = "elepower_dynamics:lead_lump"
 })
 
@@ -429,7 +428,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type   = "cooking",
-	output = "elepower_dynamics:zinc_ingot",
+	output = epi.zinc_ingot,
 	recipe = "elepower_dynamics:zinc_lump"
 })
 
