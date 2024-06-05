@@ -439,6 +439,30 @@ minetest.register_craft({
 	cooktime = 10,
 })
 
+if minetest.get_modpath("technic") then
+	--convert duplicate ingots
+	minetest.register_craft({
+		type     = "cooking",
+		output   = "elepower_dynamics:lead_ingot",
+		recipe   = "technic:lead_ingot",
+	})
+	minetest.register_craft({
+		type     = "cooking",
+		output   = "technic:lead_ingot",
+		recipe   = "elepower_dynamics:lead_ingot",
+	})
+	minetest.register_craft({
+		type     = "cooking",
+		output   = "elepower_dynamics:zinc_ingot",
+		recipe   = "technic:zinc_ingot",
+	})
+	minetest.register_craft({
+		type     = "cooking",
+		output   = "technic:zinc_ingot",
+		recipe   = "elepower_dynamics:zinc_ingot",
+	})
+end
+
 -----------
 -- Gears --
 -----------
