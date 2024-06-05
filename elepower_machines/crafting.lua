@@ -1,4 +1,3 @@
-
 -- see elepower_papi >> external_nodes_items.lua for explanation
 -- shorten table ref
 local epi = ele.external.ing
@@ -178,8 +177,8 @@ for mat, ingot in pairs(ingot_map) do
 			elepm.register_craft({
 				type   = "grind",
 				recipe = { plate.item },
-				output = dust.item.." 2",
-				time   = 6,
+				output = dust.item,
+				time   = 5,
 			})
 		end
 	end
@@ -227,12 +226,20 @@ local compressor_recipes = {
 		time   = 20,
 	},
 	{
-		recipe = { epi.mese_crystal_fragment.." 4", epi.mese_crystal_fragment.." 4" },
+		recipe = { epi.mese_crystal_fragment.." 4", epi.mese_crystal_fragment.." 5" },
+		output = epi.mese_crystal,
+		time   = 2,
+	},
+		recipe = { epi.mese_crystal_fragment.." 5", epi.mese_crystal_fragment.." 4" },
 		output = epi.mese_crystal,
 		time   = 2,
 	},
 	{
-		recipe = { epi.mese_crystal.." 4",epi.mese_crystal.." 4" },
+		recipe = { epi.mese_crystal.." 4",epi.mese_crystal.." 5" },
+		output = epi.mese,
+		time   = 2,
+	},
+		recipe = { epi.mese_crystal.." 5",epi.mese_crystal.." 4" },
 		output = epi.mese,
 		time   = 2,
 	},
