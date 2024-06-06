@@ -28,18 +28,18 @@ ele.external.graphic = {}
 -- Index --
 -----------
 --- settings to update............line 34
---- elepower_papi.................line 179
---- elepower_dynamics.............line 200
---- elepower_machines.............line 323
---- elepower_tools................line 584
---- elepower_farming..............line 635
---- elepower_solar................line 740
---- elepower_thermal..............line 776
---- elepower_mining...............line 809
---- elepower_nuclear..............line 837
---- elepower_wireless.............line 925
---- elepower_lighting.............line 999
---- elepower_tome.................line 1056
+--- elepower_papi.................line 171
+--- elepower_dynamics.............line 192
+--- elepower_machines.............line 315
+--- elepower_tools................line 576
+--- elepower_farming..............line 627
+--- elepower_solar................line 732
+--- elepower_thermal..............line 768
+--- elepower_mining...............line 801
+--- elepower_nuclear..............line 829
+--- elepower_wireless.............line 917
+--- elepower_lighting.............line 991
+--- elepower_tome.................line 1048
 
 ------------------------------------------------------------
 --         _   _ _   ___      _   _   _                   --
@@ -141,14 +141,6 @@ ele.external.ing.obsidian_glass = "default:obsidian_glass"
 ele.external.ing.slab_stone_block = "stairs:slab_stone_block"
 ele.external.ing.blueberry_bush_leaves = "default:blueberry_bush_leaves"
 ele.external.ing.slab_desert_stone_block = "stairs:slab_desert_stone_block"
-ele.external.ing.lead_lump  = "elepower_dynamics:lead_lump"  --technic also has lead
-ele.external.ing.lead_ingot = "elepower_dynamics:lead_ingot"
-ele.external.ing.lead_block = "elepower_dynamics:lead_block"
-ele.external.ing.lead_dust  = "elepower_dynamics:lead_dust"
-ele.external.ing.zinc_lump  = "elepower_dynamics:zinc_lump"  --technic also has zinc
-ele.external.ing.zinc_ingot = "elepower_dynamics:zinc_ingot"
-ele.external.ing.zinc_block = "elepower_dynamics:zinc_block"
-ele.external.ing.zinc_dust  = "elepower_dynamics:zinc_dust"
 
 ------------
 -- Sounds --
