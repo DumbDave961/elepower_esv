@@ -7,8 +7,8 @@ minetest.register_craft({
 	output = "elepower_nuclear:machine_block",
 	recipe = {
 		{"elepower_dynamics:induction_coil_advanced", "elepower_dynamics:graphite_ingot", "elepower_dynamics:induction_coil_advanced"},
-		{"elepower_dynamics:graphite_ingot", epi.lead_block, "elepower_dynamics:graphite_ingot"},
-		{epi.lead_block, "elepower_dynamics:graphite_ingot", epi.lead_block},
+		{"elepower_dynamics:graphite_ingot", "elepower_dynamics:lead_block", "elepower_dynamics:graphite_ingot"},
+		{"elepower_dynamics:lead_block", "elepower_dynamics:graphite_ingot", "elepower_dynamics:lead_block"},
 	}
 })
 
