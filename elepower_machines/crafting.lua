@@ -225,25 +225,14 @@ local compressor_recipes = {
 		output = "elepower_dynamics:xycrone_lump",
 		time   = 20,
 	},
-	{
-		recipe = { epi.mese_crystal_fragment.." 4", epi.mese_crystal_fragment.." 5" },
-		output = epi.mese_crystal,
-		time   = 2,
+		recipe = { epi.mese_crystal_fragment.." 9", epi.mese_crystal_fragment.." 9" },
+		output = epi.mese_crystal.." 2",
+		time   = 4,
 	},
 	{
-		recipe = { epi.mese_crystal_fragment.." 5", epi.mese_crystal_fragment.." 4" },
-		output = epi.mese_crystal,
-		time   = 2,
-	},
-	{
-		recipe = { epi.mese_crystal.." 4",epi.mese_crystal.." 5" },
-		output = epi.mese,
-		time   = 2,
-	},
-	{
-		recipe = { epi.mese_crystal.." 5",epi.mese_crystal.." 4" },
-		output = epi.mese,
-		time   = 2,
+		recipe = { epi.mese_crystal.." 9",epi.mese_crystal.." 9" },
+		output = epi.mese.." 2",
+		time   = 4,
 	},
 	{
 		recipe = { "elepower_dynamics:coal_dust 2","elepower_dynamics:coal_dust 2"  },
