@@ -7,7 +7,7 @@ local ept = ele.external.tools
 -- Overrides --
 ---------------
 
---Remove iron_lump -> steel_ingot, because dynamics adds iron ingot
+-- Remove iron_lump -> steel_ingot, because dynamics adds iron ingot
 minetest.clear_craft({type = "cooking", output = epi.steel_ingot})
 
 -----------
@@ -28,7 +28,7 @@ if ept.enable_iron_lead_tools == true then
 	minetest.register_craft({
 		output = 'elepower_dynamics:pick_lead',
 		recipe = {
-			{epi.lead_ingot, epi.lead_ingot, epi.lead_ingot},
+			{'elepower_dynamics:lead_ingot', 'elepower_dynamics:lead_ingot', 'elepower_dynamics:lead_ingot'},
 			{'',epi.group_stick, ''},
 			{'',epi.group_stick, ''},
 		}
@@ -48,7 +48,7 @@ if ept.enable_iron_lead_tools == true then
 	minetest.register_craft({
 		output = 'elepower_dynamics:shovel_lead',
 		recipe = {
-			{epi.lead_ingot},
+			{'elepower_dynamics:lead_ingot'},
 			{epi.group_stick},
 			{epi.group_stick},
 		}
@@ -68,8 +68,8 @@ if ept.enable_iron_lead_tools == true then
 	minetest.register_craft({
 		output = 'elepower_dynamics:axe_lead',
 		recipe = {
-			{epi.lead_ingot, epi.lead_ingot},
-			{epi.lead_ingot,epi.group_stick},
+			{'elepower_dynamics:lead_ingot', 'elepower_dynamics:lead_ingot'},
+			{'elepower_dynamics:lead_ingot',epi.group_stick},
 			{'',epi.group_stick},
 		}
 	})
@@ -88,8 +88,8 @@ if ept.enable_iron_lead_tools == true then
 	minetest.register_craft({
 		output = 'elepower_dynamics:sword_lead',
 		recipe = {
-			{epi.lead_ingot},
-			{epi.lead_ingot},
+			{'elepower_dynamics:lead_ingot'},
+			{'elepower_dynamics:lead_ingot'},
 			{epi.group_stick},
 		}
 	})
@@ -123,9 +123,9 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "elepower_dynamics:conduit 8",
 	recipe = {
-		{epi.lead_ingot, epi.lead_ingot, epi.lead_ingot},
+		{"elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot"},
 		{"basic_materials:copper_wire", "basic_materials:copper_wire", "basic_materials:copper_wire"},
-		{epi.lead_ingot, epi.lead_ingot, epi.lead_ingot},
+		{"elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot"},
 	},
 	replacements = {
 		{"basic_materials:copper_wire", "basic_materials:empty_spool"},
@@ -193,9 +193,9 @@ end
 minetest.register_craft({
 	output = "elepower_dynamics:opaque_duct 3",
 	recipe = {
-		{epi.lead_ingot, epi.lead_ingot, epi.lead_ingot},
-		{"fluid_transfer:fluid_duct", "fluid_transfer:fluid_duct", "fluid_transfer:fluid_duct"},
-		{epi.lead_ingot, epi.lead_ingot, epi.lead_ingot},
+		{"elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot"},
+		{"fluid_transfer:fluid_duct"   , "fluid_transfer:fluid_duct"    , "fluid_transfer:fluid_duct"},
+		{"elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot",  "elepower_dynamics:lead_ingot"},
 	}
 })
 
@@ -241,7 +241,7 @@ minetest.register_craft({
 	output = "elepower_dynamics:wound_silver_coil",
 	recipe = {
 		{""              , epi.silver_ingot, ""},
-		{epi.silver_ingot, epi.zinc_ingot, epi.silver_ingot},
+		{epi.silver_ingot, "elepower_dynamics:zinc_ingot",epi.silver_ingot},
 		{""              , epi.silver_ingot, ""}
 	}
 })
@@ -250,7 +250,7 @@ minetest.register_craft({
 	output = "elepower_dynamics:wound_silver_coil",
 	recipe = {
 		{"", "basic_materials:silver_wire", ""},
-		{"basic_materials:silver_wire", epi.zinc_ingot, "basic_materials:silver_wire"},
+		{"basic_materials:silver_wire", "elepower_dynamics:zinc_ingot", "basic_materials:silver_wire"},
 		{"", "basic_materials:silver_wire", ""}
 	},
 	replacements = {
@@ -348,7 +348,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "elepower_dynamics:battery 2",
 	recipe = {
-		{epi.zinc_dust, "elepower_dynamics:graphite_rod", epi.lead_dust},
+		{"elepower_dynamics:zinc_dust", "elepower_dynamics:graphite_rod", "elepower_dynamics:lead_dust"},
 		{"elepower_dynamics:tin_plate", epi.mese_crystal_fragment, "elepower_dynamics:tin_plate"},
 		{"elepower_dynamics:tin_plate", epi.mese_crystal_fragment, "elepower_dynamics:tin_plate"},
 	}
@@ -416,7 +416,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type   = "cooking",
-	output = epi.lead_ingot,
+	output = "elepower_dynamics:lead_ingot",
 	recipe = "elepower_dynamics:lead_lump"
 })
 
@@ -428,7 +428,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type   = "cooking",
-	output = epi.zinc_ingot,
+	output = "elepower_dynamics:zinc_ingot",
 	recipe = "elepower_dynamics:zinc_lump"
 })
 
@@ -438,30 +438,6 @@ minetest.register_craft({
 	recipe   = "elepower_dynamics:viridisium_lump",
 	cooktime = 10,
 })
-
-if minetest.get_modpath("technic") then
-	--convert duplicate ingots
-	minetest.register_craft({
-		type     = "cooking",
-		output   = "elepower_dynamics:lead_ingot",
-		recipe   = "technic:lead_ingot",
-	})
-	minetest.register_craft({
-		type     = "cooking",
-		output   = "technic:lead_ingot",
-		recipe   = "elepower_dynamics:lead_ingot",
-	})
-	minetest.register_craft({
-		type     = "cooking",
-		output   = "elepower_dynamics:zinc_ingot",
-		recipe   = "technic:zinc_ingot",
-	})
-	minetest.register_craft({
-		type     = "cooking",
-		output   = "technic:zinc_ingot",
-		recipe   = "elepower_dynamics:zinc_ingot",
-	})
-end
 
 -----------
 -- Gears --
